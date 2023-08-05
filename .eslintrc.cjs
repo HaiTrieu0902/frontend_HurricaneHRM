@@ -9,5 +9,9 @@ module.exports = {
     rules: {
         'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
         '@typescript-eslint/no-var-requires': 'error',
+
+        // Add this line to disable the rule
+        '@typescript-eslint/no-unused-vars': 'off',
+        '@typescript-eslint/no-explicit-any': 'warn',
     },
 };

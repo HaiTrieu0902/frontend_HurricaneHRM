@@ -8,7 +8,7 @@ type Unpromisify<T> = T extends Promise<infer P> ? P : never;
 export const lazyLoad = <T extends Promise<any>, U extends React.ComponentType<any>>(
     importFunc: () => T,
     selectorFunc?: (s: Unpromisify<T>) => U,
-    opts: Opts = { fallback: null },
+    opts: Opts = { fallback: <div>Loading.....</div> },
 ) => {
     let lazyFactory: () => Promise<{ default: U }> = importFunc;
 

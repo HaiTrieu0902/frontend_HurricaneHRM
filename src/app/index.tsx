@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
+import { RoutesConfig } from './routes';
 
 function App() {
-    return <div>hihi</div>;
+    return (
+        <>
+            <RoutesConfig />
+        </>
+    );
 }
 
 export default App;

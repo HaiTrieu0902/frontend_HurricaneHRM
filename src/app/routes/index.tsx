@@ -1,8 +1,11 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { ROUTES } from '../config';
 import NoAuthRoute from './NoAuthRoute';
 import PrivateRoutes from './PrivateRoute';
+const LoginPage = lazy(() => import('../models/page/loginPage/LoginPage'));
+const ForgotPage = lazy(() => import('../models/page/forgotPage/ForgotPage'));
+const NotFoundPage = lazy(() => import('../models/page/notFoundPage/NotFoundPage'));
 
 export const RoutesConfig = () => {
     return (
@@ -17,7 +20,9 @@ export const RoutesConfig = () => {
                     <Route element={<PrivateRoutes />}>
                         {/* <Route path={ROUTES.login} Component={LoginPage} /> */}
                     </Route>
-                    {/* <Route path={ROUTES.mainpage} Component={LoginPage} /> */}
+                    <Route path={ROUTES.homepage} Component={LoginPage} />
+                    <Route path={ROUTES.forgot} Component={ForgotPage} />
+                    <Route path={ROUTES.notfoundPage} Component={NotFoundPage} />
                 </Routes>
             </Suspense>
         </>

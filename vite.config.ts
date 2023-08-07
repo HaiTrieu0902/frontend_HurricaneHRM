@@ -1,25 +1,19 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
-
+import replace from '@rollup/plugin-replace';
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react()],
-
-    /* Build should comment server */
+    plugins: [
+        react(),
+        replace({
+            'process.env.VITE_REACT_APP_HOST_ENV': JSON.stringify(process.env.VITE_REACT_APP_HOST_ENV),
+        }),
+    ],
     server: {
         host: '127.0.0.1',
         port: 8080,
-        // proxy: {
-        //     '/api': {
-        //         target: 'https://api-training.hrm.div4.pgtest.co',
-        //         changeOrigin: true,
-        //         rewrite: (path) => path.replace(/^\/api/, '/api/v1'),
-        //         // /api/v1
-        //         secure: false,
-        //     },
-        // },
     },
-    define: {
-        'process.env.REACT_APP_HOST_ENV': JSON.stringify(process.env.REACT_APP_HOST_ENV),
-    },
+    // define: {
+    //     'process.env.REACT_APP_HOST_ENV': JSON.stringify(process.env.REACT_APP_HOST_ENV),
+    // },
 });

@@ -2,9 +2,8 @@ import { Button, Form, Image, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import logo from '../../../../assets/logo.svg';
 import { ROUTES } from '../../../config';
-import './LoginForm.scss';
 import { IParamLogin } from '../../../types/auth.type';
-import { useForm } from 'antd/es/form/Form';
+import './LoginForm.scss';
 
 export interface LoginFormProps {
     onLogin(values: IParamLogin): void;
@@ -15,17 +14,18 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return emailRegex.test(email);
     };
-
     const validateEmail = (rule: any, value: any, callback: any) => {
-        if (!value) {
-            callback('Please enter email information');
-        } else if (!isGmail(value)) {
-            callback('Please enter a valid Gmail address');
-        } else if (value.length > 100) {
-            callback('Email cannot exceed 100 characters');
-        } else {
-            callback();
-        }
+        return new Promise<void>((resolve, reject) => {
+            if (!value) {
+                reject('Please enter email information');
+            } else if (!isGmail(value)) {
+                reject('Please enter a valid Gmail address');
+            } else if (value.length > 100) {
+                reject('Email cannot exceed 100 characters');
+            } else {
+                resolve();
+            }
+        });
     };
 
     const onFinish = (values: IParamLogin) => {

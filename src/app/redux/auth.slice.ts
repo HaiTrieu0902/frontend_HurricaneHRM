@@ -30,9 +30,6 @@ const authSlice = createSlice({
         getAccessToken: (state, action: PayloadAction<string>) => {
             state.token = action.payload;
         },
-        getAuthUser: (state, action: PayloadAction<AuthUser>) => {
-            state.authUser = action.payload;
-        },
         logout: (state) => {
             localStorage.setItem('accessToken', '');
             Cookies.remove(ACCESS_TOKEN_KEY);
@@ -41,11 +38,11 @@ const authSlice = createSlice({
     },
     extraReducers(builder) {
         builder.addCase(loginAuthAPI.fulfilled, (state, action) => {
-            state.authUser = action.payload;
+            state.authUser = action.payload?.data;
         });
     },
 });
 
-export const { getAccessToken, logout, getAuthUser } = authSlice.actions;
+export const { getAccessToken, logout } = authSlice.actions;
 
 export default authSlice.reducer;

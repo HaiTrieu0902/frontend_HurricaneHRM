@@ -1,12 +1,15 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { message } from 'antd';
+import React from 'react';
 import { RoutesConfig } from './routes';
-
+export const MessageContext = React.createContext({});
 function App() {
+    const [api, contextHolder] = message.useMessage();
     return (
         <>
-            <RoutesConfig />
+            <MessageContext.Provider value={api}>
+                {contextHolder}
+                <RoutesConfig />
+            </MessageContext.Provider>
         </>
     );
 }

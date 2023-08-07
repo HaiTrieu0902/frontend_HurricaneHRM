@@ -6,6 +6,7 @@ import PrivateRoutes from './PrivateRoute';
 const LoginPage = lazy(() => import('../models/page/loginPage/LoginPage'));
 const ForgotPage = lazy(() => import('../models/page/forgotPage/ForgotPage'));
 const NotFoundPage = lazy(() => import('../models/page/notFoundPage/NotFoundPage'));
+const HomePage = lazy(() => import('../pages/Home'));
 
 export const RoutesConfig = () => {
     return (
@@ -20,6 +21,7 @@ export const RoutesConfig = () => {
                     <Route element={<PrivateRoutes />}>
                         {/* <Route path={ROUTES.login} Component={LoginPage} /> */}
                     </Route>
+                    <Route path={ROUTES.home} Component={HomePage} />
                     <Route path={ROUTES.homepage} Component={LoginPage} />
                     <Route path={ROUTES.login} Component={LoginPage} />
                     <Route path={ROUTES.forgot} Component={ForgotPage} />

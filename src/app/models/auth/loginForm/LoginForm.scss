@@ -1,6 +1,5 @@
 .login-form-content {
-    -webkit-filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.1));
-    filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.1));
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 50%;
     .col_imgHeader {
         display: flex;
@@ -43,6 +42,9 @@
         }
     }
 
+    .text-copyright {
+        color: var(--color-sub-primary);
+    }
     .ant-form-container {
         font-feature-settings: 'tnum', 'tnum';
         box-sizing: border-box;
@@ -61,6 +63,10 @@
         border-radius: 12px;
         background-color: #f9f9f9;
         font-size: 16px;
+        padding: 0 16px;
+    }
+    .ant-input {
+        background-color: #f9f9f9;
     }
 
     .label-input label {

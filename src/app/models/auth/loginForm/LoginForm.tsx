@@ -1,15 +1,16 @@
 import { Button, Form, Image, Input } from 'antd';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../../assets/logo.svg';
-import './LoginForm.scss';
 import { ROUTES } from '../../../config';
-import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
+import './LoginForm.scss';
+import { IParamLogin } from '../../../types/auth.type';
+import { useForm } from 'antd/es/form/Form';
+
 export interface LoginFormProps {
-    // onLogin(values: ParamLogin): void;
+    onLogin(values: IParamLogin): void;
 }
 
-const LoginForm = () => {
+const LoginForm = ({ onLogin }: LoginFormProps) => {
     const isGmail = (email: string) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return emailRegex.test(email);
@@ -27,12 +28,12 @@ const LoginForm = () => {
         }
     };
 
-    // const onFinish = (values: ParamLogin) => {
-    //     onLogin(values);
-    // };
+    const onFinish = (values: IParamLogin) => {
+        onLogin(values);
+    };
 
     return (
-        <div className="bg-white  login-form-content rounded-[32px]">
+        <div className="bg-white login-form-content rounded-[32px]">
             <div className="flex items-center flex-col p-4">
                 <div className="w-full col_imgHeader">
                     <Image src={logo} className="img_header" preview={false} width={150} />
@@ -47,7 +48,7 @@ const LoginForm = () => {
                         Please enter your contact details to connect.
                     </span>
                     <Form
-                        // onFinish={onFinish}
+                        onFinish={onFinish}
                         layout="vertical"
                         className="ant-form-container w-full"
                         id="ant-form_login"
@@ -76,11 +77,11 @@ const LoginForm = () => {
                             ]}
                             className="label-input"
                         >
-                            <Input
+                            <Input.Password
                                 id="login_password"
                                 type="password"
                                 placeholder="Enter your password"
-                                className="ant-input_login "
+                                className="ant-input_login"
                             />
                         </Form.Item>
 
@@ -99,12 +100,12 @@ const LoginForm = () => {
                                 type="primary"
                                 htmlType="submit"
                             >
-                                Login In
+                                Login
                             </Button>
                         </Form.Item>
                     </Form>
                 </div>
-                <span className="text-[#3c5896] text-base">
+                <span className="text-base text-copyright">
                     © Hurricane {new Date().getFullYear()}. All Rights Reserved
                 </span>
             </div>

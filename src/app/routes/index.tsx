@@ -21,6 +21,7 @@ export const RoutesConfig = () => {
                         {/* <Route path={ROUTES.login} Component={LoginPage} /> */}
                     </Route>
                     <Route path={ROUTES.homepage} Component={LoginPage} />
+                    <Route path={ROUTES.login} Component={LoginPage} />
                     <Route path={ROUTES.forgot} Component={ForgotPage} />
                     <Route path={ROUTES.notfoundPage} Component={NotFoundPage} />
                 </Routes>

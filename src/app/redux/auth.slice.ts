@@ -1,7 +1,8 @@
 import { AsyncThunk, PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Cookies from 'js-cookie';
-import { AuthUser } from '../types/auth.type';
 import { ACCESS_TOKEN_KEY } from '../constants';
+import { loginAPI } from '../service/api/auth';
+import { AuthUser, IParamLogin } from '../types/auth.type';
 type GenericAsyncThunk = AsyncThunk<unknown, unknown, any>;
 type PendingAction = ReturnType<GenericAsyncThunk['pending']>;
 type RejectedAction = ReturnType<GenericAsyncThunk['rejected']>;
@@ -16,6 +17,11 @@ const initialState: Auth = {
     token: null,
     authUser: {} as Required<AuthUser>,
 };
+
+export const loginAuthAPI = createAsyncThunk('login/loginAPI', async (param: IParamLogin) => {
+    const data = await loginAPI(param);
+    return data;
+});
 
 const authSlice = createSlice({
     name: 'auth',
@@ -34,9 +40,9 @@ const authSlice = createSlice({
         },
     },
     extraReducers(builder) {
-        // builder.addCase(getUserSelects.fulfilled, (state, action) => {
-        //     state.userSelectList = action.payload;
-        // });
+        builder.addCase(loginAuthAPI.fulfilled, (state, action) => {
+            state.authUser = action.payload;
+        });
     },
 });
 

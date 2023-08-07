@@ -3,7 +3,7 @@ import { ACCESS_TOKEN_KEY } from '../constants';
 import Cookies from 'js-cookie';
 
 const axiosCustomer = axios.create({
-    baseURL: process.env.REACT_APP_HOST_ENV,
+    baseURL: import.meta.env.VITE_REACT_APP_HOST_ENV,
     timeout: 100000,
 });
 

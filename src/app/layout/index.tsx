@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Layout as AntLayout, Menu, MenuProps } from 'antd';
 import { DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
+import Header from './header/Header';
 interface LayoutProps {
     children: React.ReactNode;
 }
@@ -30,8 +31,10 @@ const Layout = ({ children }: LayoutProps) => {
     const [collapsed, setCollapsed] = useState(false);
     return (
         <AntLayout className="layout_container" hasSider>
-            <AntHeader className="layout_header"></AntHeader>
-            <AntLayout style={{ marginTop: 95 }}>
+            <AntHeader className="layout_header">
+                <Header />
+            </AntHeader>
+            <AntLayout className="layout_subcontain">
                 <Sider
                     className="layout_sider"
                     width={250}

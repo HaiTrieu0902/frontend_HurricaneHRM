@@ -4,7 +4,11 @@ import Layout from '../../layout';
 const HomePage = () => {
     return (
         <Layout>
-            <div>hihi</div>
+            <div style={{ backgroundColor: '#fafafa' }}>
+                <p>asdsa</p>
+                <p>sdaasdas</p>
+                <p>asdasdsa</p>
+            </div>
         </Layout>
     );
 };

@@ -14,7 +14,9 @@ const Header = () => {
                 <Row gutter={[10, 10]} className="header_logo">
                     <Col span={12}>
                         <div className="header-rule__logo">
-                            <Image className="logo_item-header" src={Logo} preview={false}></Image>
+                            <div className="logo_item-container">
+                                <Image className="logo_item-header" src={Logo} preview={false}></Image>
+                            </div>
                             <div className="slogan_header">
                                 <p>Hurricane</p>
                                 <span>Hurls you to new heights</span>

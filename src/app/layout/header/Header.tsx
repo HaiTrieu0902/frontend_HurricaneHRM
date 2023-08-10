@@ -4,9 +4,14 @@ import { Col, Image, Row, Select } from 'antd';
 import AvatarDefault from '../../../assets/img/avatardefault.jpg';
 import Logo from '../../../assets/logo.svg';
 import { ExpandAltOutlined } from '@ant-design/icons';
+import { useAppDispatch } from '../../store';
+import { setTheme } from '../../redux/auth.slice';
 const Header = () => {
+    const dispatch = useAppDispatch();
+
     const handleChange = (value: string) => {
         console.log(`selected ${value}`);
+        dispatch(setTheme(value));
     };
     return (
         <Row align={'middle'}>
@@ -33,8 +38,8 @@ const Header = () => {
                             style={{ width: 120, color: '#035397' }}
                             onChange={handleChange}
                             options={[
-                                { value: 'light', label: 'Dark' },
-                                { value: 'dark', label: 'Light' },
+                                { value: 'dark', label: 'Dark' },
+                                { value: 'light', label: 'Light' },
                             ]}
                         />
                     </Col>

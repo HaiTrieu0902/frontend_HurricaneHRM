@@ -45,13 +45,13 @@ a[href] {
 }
 
 html *::-webkit-scrollbar {
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
     height: 6px !important;
     width: 6px !important;
 }
 html *::-webkit-scrollbar-thumb {
     border-radius: 6px;
-    background-color: rgb(213, 213, 213);
+    background-color: rgb(188, 188, 188);
 }
 html *::-webkit-scrollbar-track {
     border-radius: 0;

@@ -11,11 +11,13 @@ type FulfilledAction = ReturnType<GenericAsyncThunk['fulfilled']>;
 interface Auth {
     token: string | null;
     authUser: AuthUser;
+    theme: string | any;
 }
 
 const initialState: Auth = {
     token: null,
     authUser: {} as Required<AuthUser>,
+    theme: 'light',
 };
 
 export const loginAuthAPI = createAsyncThunk('login/loginAPI', async (param: IParamLogin) => {
@@ -27,6 +29,9 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
+        setTheme: (state, action) => {
+            state.theme = action.payload;
+        },
         getAccessToken: (state, action: PayloadAction<string>) => {
             state.token = action.payload;
         },
@@ -43,6 +48,6 @@ const authSlice = createSlice({
     },
 });
 
-export const { getAccessToken, logout } = authSlice.actions;
+export const { getAccessToken, logout, setTheme } = authSlice.actions;
 
 export default authSlice.reducer;

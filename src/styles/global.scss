@@ -57,12 +57,15 @@
         .layout_sider {
             z-index: 99;
             position: fixed;
-            height: calc(100vh - 17.5vh);
+            height: calc(100vh - 120px);
             overflow: auto;
             box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         }
         .layout_content {
             padding-left: 250px;
+        }
+        .layout_bg_light {
+            background-color: white;
         }
     }
 
@@ -93,7 +96,20 @@
     // Sidebar
     .menu_option-sidebar {
         // max-height: calc(100vh - 17.5vh);
+        .ant-menu-item-group-title {
+            color: rgb(99, 99, 99);
+            font-size: 500;
+        }
+        margin-top: 20px;
     }
+    .menu_option_dark {
+        .ant-menu-item-group-title {
+            color: rgb(237, 237, 237);
+            font-size: 500;
+        }
+        margin-top: 20px;
+    }
+
     .ant-menu-item-group-title {
         padding: 8px 20px;
         font-size: 16px;
@@ -117,6 +133,19 @@
         }
         .ant-menu-item-selected {
             background-color: #e6f4ff;
+        }
+    }
+    .ant-menu-light .ant-menu-item-selected {
+        color: var(--color-sub-primary);
+    }
+    .ant-menu-light .ant-menu-submenu-selected > .ant-menu-submenu-title {
+    }
+    .ant-layout-sider-trigger {
+        background-color: var(--color-primary);
+    }
+    .ant-menu-sub {
+        .ant-menu-title-content {
+            font-size: 13px;
         }
     }
 }

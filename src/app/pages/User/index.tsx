@@ -1,10 +1,11 @@
 import LayoutMain from '../../layout';
-const HomePage = () => {
+
+const UserPage = () => {
     return (
         <LayoutMain>
-            <p>this is Home</p>
+            <p>this is layoutmain</p>
         </LayoutMain>
     );
 };
 
-export default HomePage;
+export default UserPage;

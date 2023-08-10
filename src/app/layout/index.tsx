@@ -7,7 +7,7 @@ interface LayoutProps {
     children: React.ReactNode;
 }
 const { Header: AntHeader, Content, Sider } = AntLayout;
-const Layout = ({ children }: LayoutProps) => {
+const LayoutMain = ({ children }: LayoutProps) => {
     const { theme } = useAppSelector((state) => state.auth);
     const [collapsed, setCollapsed] = useState(false);
     return (
@@ -25,10 +25,12 @@ const Layout = ({ children }: LayoutProps) => {
                 >
                     <Sidebar />
                 </Sider>
-                <Content className="layout_content">{children}</Content>
+                <Content className="layout_content">
+                    <div style={{ backgroundColor: '#fafafa' }}>{children}</div>
+                </Content>
             </AntLayout>
         </AntLayout>
     );
 };
 
-export default Layout;
+export default LayoutMain;

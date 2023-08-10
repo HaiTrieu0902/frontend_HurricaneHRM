@@ -4,4 +4,7 @@ export const ROUTES = {
     home: '/home',
     forgot: '/forgot-password',
     notfoundPage: '/:id',
+
+    employee: 'employee',
+    user: 'user',
 };

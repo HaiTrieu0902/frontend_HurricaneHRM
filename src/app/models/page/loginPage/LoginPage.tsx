@@ -1,12 +1,14 @@
+import Cookies from 'js-cookie';
 import { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { MessageContext } from '../../..';
+import { ROUTES } from '../../../config';
+import { ACCESS_TOKEN_KEY } from '../../../constants';
 import { getAccessToken, loginAuthAPI } from '../../../redux/auth.slice';
 import { useAppDispatch } from '../../../store';
 import { IParamLogin } from '../../../types/auth.type';
 import LoginForm from '../../auth/loginForm/LoginForm';
-import { ROUTES } from '../../../config';
 const LoginPage = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -17,6 +19,7 @@ const LoginPage = () => {
             const res: any = await dispatch(loginAuthAPI(value));
             if (res.payload?.status === 200) {
                 dispatch(getAccessToken(res.payload?.data?.token));
+                Cookies.set(ACCESS_TOKEN_KEY, res.payload?.data?.token);
                 messageApi.success(`${res.payload?.message}`);
                 navigate(ROUTES.home);
             } else {

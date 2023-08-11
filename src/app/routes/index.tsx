@@ -3,6 +3,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { ROUTES } from '../config';
 import NoAuthRoute from './NoAuthRoute';
 import PrivateRoutes from './PrivateRoute';
+import LayoutMain from '../layout';
 
 const LoginPage = lazy(() => import('../models/page/loginPage/LoginPage'));
 const ForgotPage = lazy(() => import('../models/page/forgotPage/ForgotPage'));
@@ -21,9 +22,9 @@ export const RoutesConfig = () => {
                         <Route path={ROUTES.forgot} Component={ForgotPage} />
                     </Route>
                     <Route element={<PrivateRoutes />}>
-                        <Route path={ROUTES.home} Component={HomePage} />
-                        <Route path={ROUTES.employee} Component={EmployeePage} />
-                        <Route path={ROUTES.user} Component={UserPage} />
+                        <Route path={ROUTES.home} element={<HomePage />} />
+                        <Route path={ROUTES.employee} element={<EmployeePage />} />
+                        <Route path={ROUTES.user} element={<UserPage />} />
                     </Route>
                     <Route path="/" element={<Navigate to="/home" />} />
                     <Route path={ROUTES.notfoundPage} Component={NotFoundPage} />

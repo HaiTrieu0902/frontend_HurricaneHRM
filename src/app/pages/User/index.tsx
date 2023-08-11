@@ -1,11 +1,7 @@
 import LayoutMain from '../../layout';
 
 const UserPage = () => {
-    return (
-        <LayoutMain>
-            <p>this is layoutmain</p>
-        </LayoutMain>
-    );
+    return <p>this is layoutmain</p>;
 };
 
 export default UserPage;

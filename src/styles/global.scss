@@ -52,6 +52,7 @@
             }
         }
     }
+
     .layout_subcontain {
         margin-top: 80px;
         .layout_sider {
@@ -147,5 +148,11 @@
         .ant-menu-title-content {
             font-size: 13px;
         }
+    }
+}
+
+.global-none-display {
+    .layout_header {
+        display: none !important;
     }
 }

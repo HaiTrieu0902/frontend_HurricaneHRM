@@ -1,10 +1,6 @@
 import LayoutMain from '../../layout';
 const HomePage = () => {
-    return (
-        <LayoutMain>
-            <p>this is Home</p>
-        </LayoutMain>
-    );
+    return <p>this is Home</p>;
 };
 
 export default HomePage;

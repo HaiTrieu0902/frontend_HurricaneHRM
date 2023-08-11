@@ -1,6 +1,7 @@
 import { message } from 'antd';
 import React from 'react';
 import { RoutesConfig } from './routes';
+import LayoutMain from './layout';
 export const MessageContext = React.createContext({});
 function App() {
     const [api, contextHolder] = message.useMessage();
@@ -8,7 +9,8 @@ function App() {
         <>
             <MessageContext.Provider value={api}>
                 {contextHolder}
-                <RoutesConfig />
+                {/* <RoutesConfig /> */}
+                <LayoutMain />
             </MessageContext.Provider>
         </>
     );

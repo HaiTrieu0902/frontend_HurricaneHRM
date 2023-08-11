@@ -16,6 +16,7 @@ import {
 import { Menu, MenuProps } from 'antd';
 import { SET_COLOR_ICON_DARK, SET_COLOR_ICON_LIGHT, SET_SIZE_ICON } from '../../constants';
 import { useAppSelector } from '../../store';
+import { useNavigate } from 'react-router-dom';
 
 type MenuItem = Required<MenuProps>['items'][number];
 function getItem(
@@ -35,11 +36,12 @@ function getItem(
 }
 
 const Sidebar = () => {
+    const navigate = useNavigate();
     const { theme } = useAppSelector((state) => state.auth);
     const SET_COLOR_SIDEBAR = theme === 'light' ? SET_COLOR_ICON_LIGHT : SET_COLOR_ICON_DARK;
 
     const onClick: MenuProps['onClick'] = (e) => {
-        console.log('click ', e);
+        navigate(`/${e?.key}`);
     };
     const items: MenuItem[] = [
         getItem(

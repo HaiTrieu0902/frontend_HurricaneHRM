@@ -1,6 +1,13 @@
-import LayoutMain from '../../layout';
+import { Helmet } from 'react-helmet-async';
 const HomePage = () => {
-    return <p>this is Home</p>;
+    return (
+        <>
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
+            <p>this is Home</p>
+        </>
+    );
 };
 
 export default HomePage;

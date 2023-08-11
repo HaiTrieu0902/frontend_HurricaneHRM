@@ -9,7 +9,6 @@ function App() {
         <>
             <MessageContext.Provider value={api}>
                 {contextHolder}
-                {/* <RoutesConfig /> */}
                 <LayoutMain />
             </MessageContext.Provider>
         </>

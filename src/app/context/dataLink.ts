@@ -4,32 +4,26 @@ export const links = [
         links: [
             {
                 name: 'Attendance Management',
-                //icon: attendace,
                 routeName: 'attendance',
             },
             {
                 name: 'Leave Management',
-                //icon: leave,
                 routeName: 'leave',
             },
             {
                 name: 'Payroll Management',
-                //icon: payroll,
                 routeName: 'payroll',
             },
             {
                 name: 'Employee Management',
-                //icon: employee,
                 routeName: 'employee',
             },
             {
                 name: 'User Management',
-                //icon: user,
                 routeName: 'user',
             },
             {
                 name: 'Master Management',
-                //icon: master,
                 routeName: 'master',
             },
         ],
@@ -39,12 +33,10 @@ export const links = [
         links: [
             {
                 name: 'Global Settings',
-                //icon: global,
                 routeName: 'global',
             },
             {
                 name: 'Settings',
-                //icon: setting,
                 routeName: 'settings',
             },
         ],

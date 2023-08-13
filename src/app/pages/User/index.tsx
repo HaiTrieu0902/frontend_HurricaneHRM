@@ -3,7 +3,7 @@ const UserPage = () => {
     return (
         <>
             <Helmet>
-                <title>Login</title>
+                <title>User</title>
             </Helmet>
             <p>This is User</p>
         </>

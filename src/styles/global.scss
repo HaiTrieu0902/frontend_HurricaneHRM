@@ -136,6 +136,14 @@
             background-color: #e6f4ff;
         }
     }
+
+    /* Dark , Light in the submenu */
+    .layout_bg_dark {
+        .ant-menu-sub .ant-menu-item-selected {
+            background-color: var(--bg-active-menu);
+        }
+    }
+
     .ant-menu-light .ant-menu-item-selected {
         color: var(--color-sub-primary);
     }

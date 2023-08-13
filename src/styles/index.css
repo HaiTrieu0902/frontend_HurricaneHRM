@@ -8,6 +8,7 @@
     --black: #000000;
     --color-primary: #035397;
     --color-sub-primary: #39a2db;
+    --bg-active-menu: #1677ff;
 }
 * {
     font-family: 'Poppins', sans-serif !important;

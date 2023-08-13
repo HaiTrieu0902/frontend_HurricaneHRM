@@ -16,11 +16,12 @@ const LayoutMain = ({ children }: LayoutProps) => {
     const [collapsed, setCollapsed] = useState(false);
 
     const handleDetermineRouter = useMemo(() => {
-        if (pathname === 'login' || pathname === 'forgot-password') {
+        if (pathname === 'login' || pathname === 'forgot-password' || pathname === '') {
             return true;
         }
         return false;
     }, [pathname]);
+
     return !handleDetermineRouter ? (
         <AntLayout className="layout_container" hasSider>
             <AntHeader className="layout_header ">

@@ -1,11 +1,30 @@
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 const HomePage = () => {
+    const [currentValue, setCurrentValue] = useState(0);
+
+    /* Effect increase value clients */
+    useEffect(() => {
+        const incrementInterval = 50;
+        const interval = setInterval(() => {
+            if (currentValue >= 1000000) {
+                clearInterval(interval);
+            } else {
+                setCurrentValue((prevValue) => prevValue + 50000);
+            }
+        }, incrementInterval);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [currentValue]);
+
     return (
         <>
             <Helmet>
-                <title>Login</title>
+                <title>Home Page</title>
             </Helmet>
-            <p>this is Home</p>
+            <div className="min-w-70px counted">{currentValue.toLocaleString()} +</div>
         </>
     );
 };

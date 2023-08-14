@@ -37,7 +37,7 @@ const LayoutMain = ({ children }: LayoutProps) => {
                 >
                     <Sidebar />
                 </Sider>
-                <Content className="layout_content">
+                <Content className={` ${collapsed ? 'layout_content-sm' : 'layout_content'} `}>
                     <div style={{ backgroundColor: '#fafafa' }}>
                         <RoutesConfig />
                     </div>

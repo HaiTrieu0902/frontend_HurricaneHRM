@@ -1,5 +1,9 @@
+import { Col, Row } from 'antd';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import ContainerLayout from '../../components/Container';
+import Overview from './Overview';
+import Introduction from './Introduction';
 const HomePage = () => {
     const [currentValue, setCurrentValue] = useState(0);
 
@@ -24,7 +28,17 @@ const HomePage = () => {
             <Helmet>
                 <title>Home Page</title>
             </Helmet>
-            <div className="min-w-70px counted">{currentValue.toLocaleString()} +</div>
+            <ContainerLayout className="homepage-container">
+                <Row gutter={[10, 10]}>
+                    <Col span={10}>
+                        <Overview />
+                    </Col>
+                    <Col span={14}>
+                        <Introduction />
+                    </Col>
+                </Row>
+            </ContainerLayout>
+            {/* <div className="min-w-70px counted">{currentValue.toLocaleString()} +</div> */}
         </>
     );
 };

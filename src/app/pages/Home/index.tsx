@@ -29,11 +29,11 @@ const HomePage = () => {
                 <title>Home Page</title>
             </Helmet>
             <ContainerLayout className="homepage-container">
-                <Row gutter={[10, 10]}>
-                    <Col span={10}>
+                <Row gutter={[32, 10]}>
+                    <Col span={11}>
                         <Overview />
                     </Col>
-                    <Col span={14}>
+                    <Col span={13}>
                         <Introduction />
                     </Col>
                 </Row>

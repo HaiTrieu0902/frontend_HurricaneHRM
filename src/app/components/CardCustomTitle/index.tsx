@@ -4,7 +4,7 @@ import './CardCustomTitle.scss';
 
 interface CardNotTitleProps {
     children: React.ReactNode;
-    height?: number;
+    height?: number | string;
     width?: string;
     extra?: React.ReactNode;
     title?: string;

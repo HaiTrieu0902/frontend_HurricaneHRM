@@ -9,7 +9,7 @@ import './styles/index.css';
 import './styles/global.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-    <React.StrictMode>
+    <React.Fragment>
         <Provider store={store}>
             <HelmetProvider>
                 <BrowserRouter>
@@ -17,5 +17,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 </BrowserRouter>
             </HelmetProvider>
         </Provider>
-    </React.StrictMode>,
+    </React.Fragment>,
 );

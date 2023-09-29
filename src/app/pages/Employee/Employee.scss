@@ -1,0 +1,34 @@
+.employee-container {
+    .btn-add {
+        background-color: #1677ff !important;
+        color: white;
+        width: 96px;
+    }
+    .btn-delete {
+        background-color: red !important;
+        color: white;
+        width: 120px;
+    }
+
+    .table-employee__container {
+        height: 63vh;
+    }
+
+    .ant-table-wrapper .ant-table-thead > tr > th {
+        padding: 8px 8px;
+    }
+    .ant-table-wrapper .ant-table-tbody > tr > td {
+        padding: 8px 8px;
+    }
+    .table-staff__pagination {
+        display: flex;
+    }
+
+    .table-staff__table {
+        flex: 1;
+        overflow: auto;
+    }
+    .ant-dropdown-trigger {
+        display: none;
+    }
+}

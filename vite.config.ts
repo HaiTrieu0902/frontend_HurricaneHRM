@@ -11,7 +11,7 @@ export default defineConfig({
     ],
     server: {
         host: '127.0.0.1',
-        port: 8080,
+        port: 5137,
     },
     // define: {
     //     'process.env.REACT_APP_HOST_ENV': JSON.stringify(process.env.REACT_APP_HOST_ENV),
